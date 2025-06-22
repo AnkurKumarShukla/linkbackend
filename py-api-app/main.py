@@ -4,18 +4,19 @@ from typing import List, Optional
 from sqlalchemy import create_engine, text
 from fastapi import HTTPException
 import pandas as pd
+from math import exp
 import numpy as np
 from datetime import datetime, timedelta
 import os
 
-import os
+
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))  
-DB_PATH = os.path.abspath(os.path.join(BASE_DIR, "..", "db", "stream_data.db"))  
+DB_PATH = os.path.abspath(os.path.join(BASE_DIR, "..", "data_stream/db", "stream_data.db"))  
 DATABASE_URL = f"sqlite:///{DB_PATH}"
 
 
-engine = create_engine("sqlite:////app/db/stream_data.db", connect_args={"check_same_thread": False})
+engine = create_engine(DATABASE_URL, connect_args={"check_same_thread": False})
 app = FastAPI()
 
 class Report(BaseModel):
@@ -33,7 +34,7 @@ class Report(BaseModel):
     synthetic_oi: float
 
 @app.get("/streamrecords", response_model=List[Report])
-def get_reports(stream_id: Optional[str] = Query(None), limit: int = 50):
+def get_reports(stream_id: Optional[str] = Query(None), limit: int = 500):
     query = "SELECT * FROM reports"
     params = {}
 
