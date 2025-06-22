@@ -1,0 +1,10 @@
+FROM golang:1.24
+
+WORKDIR /app
+COPY ../api-app .
+
+RUN go mod init api-app && \
+    go get github.com/mattn/go-sqlite3 && \
+    go build -o api-app
+
+CMD ["./api-app"]

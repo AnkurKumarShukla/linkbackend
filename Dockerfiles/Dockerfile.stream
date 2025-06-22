@@ -1,0 +1,20 @@
+FROM golang:1.24
+
+WORKDIR /app
+
+# Install required build tools for cgo/SQLite
+RUN apt-get update && apt-get install -y git gcc libc6-dev
+
+# Copy and download modules
+COPY stream-app/go.mod stream-app/go.sum ./
+RUN go mod download
+
+# Copy source code and build
+COPY stream-app/. .
+
+# Create db folder if not exist at container startup
+RUN mkdir -p ./db
+
+RUN go build -o stream-app
+
+CMD ["./stream-app"]
