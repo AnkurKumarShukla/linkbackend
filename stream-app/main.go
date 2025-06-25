@@ -50,8 +50,7 @@ func main() {
         ids = append(ids, fid)
     }
 
-    ctx, cancel := context.WithTimeout(context.Background(), 300*time.Second)
-    defer cancel()
+    ctx:= context.Background()
 
     stream, err := client.Stream(ctx, ids)
     if err != nil {
