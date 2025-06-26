@@ -20,7 +20,7 @@ Track leverage cycles, market volatility, and systemic risk using decentralized 
 - [Endpoint to read data streamed by data-stream](https://github.com/AnkurKumarShukla/linkbackend/blob/a7762fbae0ae0298ee24ad36191506dacda43ca1/py-api-app/main.py#L37)
 
 
-
+![Architecture Diagram](image.png)
 
 ## 📦 Tech Stack
 
