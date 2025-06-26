@@ -23,8 +23,8 @@ func main() {
         os.Exit(1)
     }
 
-    apiKey := "a625ef1a-41e0-4"
-	apiSecret := "z94)?-Vi9cjUAZHF9Oq0-l=6f7U5RMav2q4C3SEY=wC(2)@?wKSPj)_63Xw0vVvzYz58x"
+    apiKey := "a62*********************************"
+	apiSecret := "z94)?-****************************************"
     if apiKey == "" || apiSecret == "" {
         log.Fatal("API_KEY and API_SECRET must be set as environment variables.")
     }
