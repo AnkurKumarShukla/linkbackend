@@ -13,6 +13,15 @@ Track leverage cycles, market volatility, and systemic risk using decentralized 
 
 ---
 
+### Chromium Hacks (Direct code link link)
+- [Data Stream integration](https://github.com/AnkurKumarShukla/linkbackend/blob/0c76864ee9df81f7f9b3c65fbd8418584973ba6a/stream-app/main.go#L20)
+- [Endpoint to estimate and expose reflexivity score](https://github.com/AnkurKumarShukla/linkbackend/blob/0c76864ee9df81f7f9b3c65fbd8418584973ba6a/py-api-app/main.py#L56)
+
+- [Endpoint to read data streamed by data-stream](https://github.com/AnkurKumarShukla/linkbackend/blob/0c76864ee9df81f7f9b3c65fbd8418584973ba6a/py-api-app/main.py#L37)
+
+
+
+
 ## 📦 Tech Stack
 
 | Category              | Technology                          |
